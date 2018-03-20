@@ -510,7 +510,7 @@ class TestMergeBom(unittest.TestCase):
 
     def test_cliMergeDiff(self):
         outfilename = "/tmp/cli-diff-merged.xlsx"
-        out = subprocess.check_output(["python",
+        out = subprocess.check_output(["python2",
                                        "mergebom.py",
                                        "-o",
                                        outfilename,
@@ -530,7 +530,7 @@ class TestMergeBom(unittest.TestCase):
 
         retcode = None
         try:
-            out = subprocess.check_call(["python",
+            out = subprocess.check_call(["python2",
                                          "mergebom.py",
                                          "-o",
                                          outfilename,
@@ -545,7 +545,7 @@ class TestMergeBom(unittest.TestCase):
 
         self.assertEqual(retcode, 1)
 
-        out = subprocess.check_call(["python",
+        out = subprocess.check_call(["python2",
                                      "mergebom.py",
                                      "-o",
                                      outfilename,
@@ -559,7 +559,7 @@ class TestMergeBom(unittest.TestCase):
 
     def test_cliMergeGlob(self):
         outfilename = "/tmp/cli-mergedGlob.xlsx"
-        out = subprocess.check_output(["python", "mergebom.py",
+        out = subprocess.check_output(["python2", "mergebom.py",
                                        "-r", "53",
                                        "-w", "O",
                                        "-n", "Test project glob",
@@ -628,7 +628,7 @@ class TestMergeBom(unittest.TestCase):
                     self.assertEqual(c, j[m])
 
         outfilename = "/tmp/extra_column.xlsx"
-        out = subprocess.check_output(["python",
+        out = subprocess.check_output(["python2",
                                        "mergebom.py",
                                        "-o",
                                        outfilename,
@@ -646,7 +646,7 @@ class TestMergeBom(unittest.TestCase):
 
     def test_cliCSV(self):
         outfilename = "/tmp/csv_test.xlsx"
-        out = subprocess.check_output(["python", "mergebom.py",
+        out = subprocess.check_output(["python2", "mergebom.py",
                                        "--csv",
                                        "-r", "77",
                                        "-w", "X",
